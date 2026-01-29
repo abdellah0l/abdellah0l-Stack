@@ -1,0 +1,30 @@
+{
+  "name": "abdellah0l-stack",
+  "version": "1.0.0",
+  "description": "Scaffold a Next.js project with TypeScript, tRPC, Drizzle, Better-Auth, Arcjet, and Vercel AI SDK",
+  "bin": {
+    "abdellah0l-stack": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "template"
+  ],
+  "keywords": [
+    "nextjs",
+    "trpc",
+    "drizzle",
+    "better-auth",
+    "arcjet",
+    "vercel-ai",
+    "boilerplate",
+    "cli"
+  ],
+  "author": "abdellah0l",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "prompts": "^2.4.2"
+  },
+  "type": "module"
+}
