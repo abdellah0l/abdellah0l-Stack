@@ -56,6 +56,12 @@ async function main() {
       name: "includeRateLimiting",
       message: "Include rate limiting (Arcjet)?",
       initial: true,
+    },
+    {
+      type: "confirm",
+      name: "includeTanstack",
+      message: "Include TanStack Query (React Query)?",
+      initial: true,
     }
   ]);
 
@@ -108,6 +114,12 @@ async function main() {
       delete pkg.dependencies["@arcjet/next"];
       delete pkg.dependencies["arcjet"];
     }
+
+    // Remove TanStack Query if not needed
+    if (!options.includeTanstack && pkg.dependencies) {
+      delete pkg.dependencies["@tanstack/react-query"];
+      delete pkg.dependencies["@tanstack/react-query-devtools"];
+    }
     
     await fs.writeJson(pkgPath, pkg, { spaces: 2 });
   }
@@ -157,13 +169,24 @@ async function main() {
     }
   }
 
+  // Remove TanStack Query files if not needed
+  if (!options.includeTanstack) {
+    const tanstackPaths = [
+      path.join(targetDir, "src", "components", "query-provider.tsx"),
+    ];
+    for (const p of tanstackPaths) {
+      await fs.remove(p).catch(() => {});
+    }
+  }
+
   // Success message
   console.log(chalk.green.bold("\n✅ Project created successfully!\n"));
   
   console.log(chalk.white("📦 Stack included:"));
   console.log(chalk.gray("   • Next.js 16 with App Router"));
   console.log(chalk.gray("   • TypeScript"));
-  console.log(chalk.gray("   • tRPC + React Query"));
+  console.log(chalk.gray("   • tRPC"));
+  if (options.includeTanstack) console.log(chalk.gray("   • TanStack Query (React Query)"));
   console.log(chalk.gray("   • Drizzle ORM + PostgreSQL"));
   console.log(chalk.gray("   • Better-Auth (GitHub, Google, Email)"));
   if (options.includeRateLimiting) console.log(chalk.gray("   • Arcjet (Rate Limiting)"));

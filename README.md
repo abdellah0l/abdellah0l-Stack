@@ -4,7 +4,8 @@ A CLI to scaffold a modern full-stack Next.js project with:
 
 - ⚡ **Next.js 16** with App Router
 - 🔷 **TypeScript** 
-- 🔗 **tRPC** + React Query for type-safe APIs
+- 🔗 **tRPC** for type-safe APIs
+- ⚡ **TanStack Query** (React Query) for data fetching (optional)
 - 🗃️ **Drizzle ORM** + PostgreSQL (Neon)
 - 🔐 **Better-Auth** (GitHub, Google, Email)
 - 🛡️ **Arcjet** for rate limiting (optional)
