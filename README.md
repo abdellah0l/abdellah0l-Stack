@@ -31,17 +31,19 @@ abdellah0l-stack my-app
 ```bash
 cd my-app
 npm install
+npm install babel-plugin-react-compiler --save-dev
 
 # Set up your .env file with:
 # - DATABASE_URL
+# - BETTER_AUTH_URL
 # - BETTER_AUTH_SECRET
 # - GITHUB_CLIENT_ID & GITHUB_CLIENT_SECRET
 # - GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET
-# - ARCJET_KEY
+# - ARCJET_KEY (if using rate limiting)
 # - AI_GATEWAY_API_KEY (if using AI)
 # - UPLOADTHING_TOKEN (if using uploads)
 
-npm run db:push
+npm run build
 npm run dev
 ```
 

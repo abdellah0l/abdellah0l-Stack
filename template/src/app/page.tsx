@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-zinc-900 to-black text-white">
+    <main className="min-h-screen bg-linear-to-b from-zinc-900 to-black text-white">
       <div className="container mx-auto px-4 py-20">
         <div className="text-center space-y-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Welcome to Abdellah0l-Stack
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">

@@ -3,6 +3,7 @@ import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { db } from "@/drizzle/db";
 import { user } from "@/drizzle/schema/auth-schema";
 import { eq } from "drizzle-orm";
+import { session } from '../../drizzle/schema/auth-schema';
 
 // this is an example router file for managing users
 // the ctx in protectedProcedure contains the authenticated user's session info
@@ -14,7 +15,7 @@ export const usersRouter = router({
     const [profile] = await db
       .select()
       .from(user)
-      .where(eq(user.id, ctx.user.id));
+      .where(eq(user.id, ctx.session.user.id));
     return profile ?? null;
   }),
 
@@ -49,7 +50,7 @@ export const usersRouter = router({
           ...(input.name && { name: input.name }),
           ...(input.image && { image: input.image }),
         })
-        .where(eq(user.id, ctx.user.id))
+        .where(eq(user.id, ctx.session.user.id))
         .returning();
       return updated;
     }),

@@ -1,6 +1,6 @@
 {
   "name": "abdellah0l-stack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scaffold a Next.js project with TypeScript, tRPC, Drizzle, Better-Auth, Arcjet, and Vercel AI SDK",
   "bin": {
     "abdellah0l-stack": "./bin/cli.js"

@@ -1,0 +1,9 @@
+# Ignore these files when publishing to npm
+node_modules/
+.git/
+.DS_Store
+*.log
+
+# Explicitly include template dotfiles (use ! to negate ignore)
+!template/.env.example
+!template/.gitignore
