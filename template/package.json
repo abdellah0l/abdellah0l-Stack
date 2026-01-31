@@ -11,6 +11,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "db:push": "drizzle-kit push",
+    "auth:generate": "npx @better-auth/cli@latest generate --config ./src/lib/auth.ts --output ./src/drizzle/schema/new-auth-schema.ts --yes",
     "lint": "eslint"
   },
   "dependencies": {

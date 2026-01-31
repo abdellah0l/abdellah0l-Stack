@@ -37,7 +37,7 @@ export const postsRouter = router({
         .values({
           title: input.title,
           content: input.content,
-          userId: ctx.user.id,
+          userId: ctx.session.user.id,
         })
         .returning();
       return post;
@@ -58,7 +58,7 @@ export const postsRouter = router({
         .from(posts)
         .where(eq(posts.id, input.id));
 
-      if (!existing || existing.userId !== ctx.user.id) {
+      if (!existing || existing.userId !== ctx.session.user.id) {
         throw new Error("Not authorized");
       }
 
@@ -83,7 +83,7 @@ export const postsRouter = router({
         .from(posts)
         .where(eq(posts.id, input.id));
 
-      if (!existing || existing.userId !== ctx.user.id) {
+      if (!existing || existing.userId !== ctx.session.user.id) {
         throw new Error("Not authorized");
       }
 

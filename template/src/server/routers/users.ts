@@ -3,7 +3,6 @@ import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { db } from "@/drizzle/db";
 import { user } from "@/drizzle/schema/auth-schema";
 import { eq } from "drizzle-orm";
-import { session } from '../../drizzle/schema/auth-schema';
 
 // this is an example router file for managing users
 // the ctx in protectedProcedure contains the authenticated user's session info
