@@ -5,6 +5,7 @@ A modern full-stack application built with:
 - **Next.js 16** - React framework with App Router
 - **TypeScript** - Type safety
 - **tRPC** - End-to-end type-safe APIs
+- **Shadcn** - for the UI components
 - **Drizzle ORM** - Type-safe database queries
 - **PostgreSQL** - Database (Neon recommended)
 - **Better-Auth** - Authentication (GitHub, Google, Email)

@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function main() {
-  console.log(chalk.blue.bold("\n🚀 abdellah0l-Stack - Next.js + tRPC + Drizzle + Better-Auth\n"));
+  console.log(chalk.blue.bold("\n🚀 abdellah0l-Stack - Next.js + tRPC + Drizzle + Better-Auth + Arcjet + TanStack Query \n"));
   console.log(chalk.gray("Thnx for using abdellah0l-Stack :) Let's build something awesome together.\n"));
 
   // Get project name from args or prompt
