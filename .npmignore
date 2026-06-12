@@ -4,6 +4,4 @@ node_modules/
 .DS_Store
 *.log
 
-# Explicitly include template dotfiles (use ! to negate ignore)
-!template/.env.example
-!template/.gitignore
+

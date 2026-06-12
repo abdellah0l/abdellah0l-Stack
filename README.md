@@ -31,7 +31,6 @@ abdellah0l-stack my-app
 ```bash
 cd my-app
 npm install
-npm install babel-plugin-react-compiler --save-dev
 
 # Set up your .env file with:
 # - DATABASE_URL
