@@ -90,6 +90,13 @@ async function main() {
   // Copy template
   await fs.copy(templateDir, targetDir);
 
+  // Rename gitignore -> .gitignore (npm strips .gitignore from published packages)
+  const oldGitignore = path.join(targetDir, "gitignore");
+  const newGitignore = path.join(targetDir, ".gitignore");
+  if (fs.existsSync(oldGitignore)) {
+    await fs.rename(oldGitignore, newGitignore);
+  }
+
   // Update package.json with project name
   const pkgPath = path.join(targetDir, "package.json");
   if (fs.existsSync(pkgPath)) {
